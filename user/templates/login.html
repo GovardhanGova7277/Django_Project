@@ -1,0 +1,44 @@
+{%extends 'base.html'%} 
+
+
+{%block 'title'%}
+<title>Register Page</title>
+{%endblock%} 
+
+{%block 'body'%}
+<div class="container">
+  <div class="child-container">
+    <div class="head">Login</div>
+    <div class="form_tag">
+    <form action="" method="post" autocomplete="on">
+      {%csrf_token%}
+      <div class="box">
+        <input type="email" name="email" placeholder="Email ID" />
+      </div>
+      <div class="box">
+        <input type="password" name="password" placeholder="Password" />
+      </div>
+      <div class="submit">
+        <input type="submit" name="submit" value="Login" />
+      </div>
+    </form>
+    <div class="register_login">
+      <a href="{%url 'register_page'%}">Go to Register Page ?</a>
+    </div>
+    {%if messages%}
+    {%for message in messages%}
+            {%if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS%}
+                    <h5 style="text-align: center;color:#3700B3;font-size: 20px;"> {{message}} </h5>
+            {%elif message.level == DEFAULT_MESSAGE_LEVELS.ERROR%}
+                    <h5 style="text-align: center;color:#3700B3;font-size: 20px;"> {{message}} </h5>
+            {%endif%}        
+            
+    {%endfor%}
+{%endif%}
+</div>
+  </div>
+  
+</div>
+
+
+{%endblock%}

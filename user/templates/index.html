@@ -1,0 +1,23 @@
+{%extends 'base.html'%}
+
+    {%block 'title'%}
+    <title>Register & Login Page</title>
+    {%endblock%}
+
+  {%block 'body'%}
+
+  <div class="user_page">
+    <div class="child_div">
+      <div class="register">
+        <a href="{%url 'register_page'%}">Create Account</a>
+      </div>
+      <h2>Already have an account?</h2>
+      <div class="login">
+        <a href="{%url 'login_page'%}">Sign in</a>
+      </div>
+    </div>
+    
+  </div>
+
+  {%endblock%}
+
